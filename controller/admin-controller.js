@@ -34,7 +34,6 @@ module.exports = {
     signUp: async (req, res) => {
         try {
             const { name, email, password, confirmPassword } = req.body
-            console.log(req.body);
             await adminModel.findOne({ Email: email }).then(async (admin) => {
                 if (admin) {
                     res.status(200).send({ exist: true, message: 'You are already signed' })
@@ -44,7 +43,6 @@ module.exports = {
                 else {
                     const salt = await bcrypt.genSalt(10)
                     const hashedPassword = await bcrypt.hash(password, salt)
-                    console.log('hash'+hashedPassword);
                     const Password = hashedPassword
                     const newAdmin = new adminModel({
                         Name: name,
