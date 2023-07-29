@@ -126,7 +126,7 @@ module.exports = {
                 questionTitle: questionTitle
             })
             await questions.save()
-            res.status(200).send({ success: true, message: 'Your jobForm updated' })
+            res.status(200).send({ success: true, message: 'Your jobForm added' })
         } catch (error) {
             console.log(error);
             res.status(500).send({ error: true })

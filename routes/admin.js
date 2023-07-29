@@ -15,7 +15,7 @@ router.get('/get-questions/:id',adminController.getAllQuestions)
 
 router.post('/',adminController.doLogin)
 router.post('/signUp',adminController.signUp)
-router.post('/add-job/:id',adminController.addJob)
+router.post('/add-job/',adminController.addJob)
 router.post('/add-form',adminController.addForm)
 
 // PUT METHODS

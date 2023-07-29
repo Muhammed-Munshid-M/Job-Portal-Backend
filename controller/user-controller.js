@@ -14,7 +14,7 @@ module.exports = {
                 answers: answers,
                 shortListed: shortlisted
             })
-            candidate.save()
+            await candidate.save()
             res.status(200).send({ success: true, message: 'Your Job details added' })
         } catch (error) {
             console.log(error);
