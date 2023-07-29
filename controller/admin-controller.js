@@ -33,7 +33,7 @@ module.exports = {
 
     signUp: async (req, res) => {
         try {
-            let { name, email, password, confirmPassword } = req.body
+            const { name, email, password, confirmPassword } = req.body
             console.log(req.body);
             await adminModel.findOne({ Email: email }).then(async (admin) => {
                 if (admin) {
